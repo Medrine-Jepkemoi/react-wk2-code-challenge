@@ -15,7 +15,7 @@ function BotCollection(props) {
       <h1>Bot Collection</h1>
       <div className="botCard">
         {bots.map((bot) => (
-          <div key={bot.id} className="card">
+          <div key={bot.id} className="card" onClick={() => props.onrenderBot(bot)}>
             <img src={bot.avatar_url} alt={bot.name} />
             <div className="card-content">
               <h3>{bot.name}</h3>
