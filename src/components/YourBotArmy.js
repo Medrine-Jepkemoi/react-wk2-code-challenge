@@ -21,7 +21,7 @@ function YourBotArmy() {
       .catch((err) => console.log(err));
   }
   return (
-    <div>
+    <div className="addBot">
       <h1>Your Bot Army</h1>
       <div className="botCard">
         {renderBots.map((bot) => (

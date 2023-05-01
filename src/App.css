@@ -26,3 +26,8 @@
 .deleteCard:hover {
   background-color: red;
 }
+
+h1 {
+  font-style: oblique;
+  font-size: 32px;
+}
