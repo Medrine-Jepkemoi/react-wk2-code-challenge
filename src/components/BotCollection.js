@@ -4,7 +4,7 @@ function BotCollection(props) {
   const [bots, setBots] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/bots")
+    fetch("https://botdatabase.onrender.com")
       .then((res) => res.json())
       .then((data) => setBots(data))
       .catch((err) => console.log(err));
