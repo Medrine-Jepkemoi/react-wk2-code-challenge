@@ -14,3 +14,15 @@
   box-shadow: 0 2px 4px 0 rgb(88, 63, 63);
   word-wrap: break-word;
 }
+
+.deleteCard {
+  background-color: white;
+  color: black;
+  padding: 15px;
+  text-align: justify;
+  font-size: 12px;
+}
+
+.deleteCard:hover {
+  background-color: red;
+}
