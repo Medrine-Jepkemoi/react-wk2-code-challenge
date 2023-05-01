@@ -9,12 +9,23 @@ function YourBotArmy() {
       setrenderBots([...renderBots, bot]);
     }
   }
+
+  function deleteBot(bot) {
+    fetch(`http://localhost:3000/bots/${bot.id}`, {
+      method: "DELETE",
+    })
+      .then((res) => {
+        const newrenderBots = renderBots.filter((b) => b.id !== bot.id);
+        setrenderBots(newrenderBots);
+      })
+      .catch((err) => console.log(err));
+  }
   return (
     <div>
       <h1>Your Bot Army</h1>
-      <div className="card-container">
+      <div className="botCard">
         {renderBots.map((bot) => (
-          <div key={bot.id} className="card">
+          <div key={bot.id} className="card" onClick={() => deleteBot(bot)}>
             <img src={bot.avatar_url} alt={bot.name} />
             <div className="card-content">
               <h3>{bot.name}</h3>
@@ -23,7 +34,9 @@ function YourBotArmy() {
               <p>Damage: {bot.damage}</p>
               <p>Armor: {bot.armor}</p>
               <p>Catchphrase: {bot.catchphrase}</p>
-              <button className="delete-button">X</button>
+              <button className="deleteCard" onClick={() => deleteBot(bot)}>
+                X
+              </button>
             </div>
           </div>
         ))}
